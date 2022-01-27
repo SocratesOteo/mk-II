@@ -8,5 +8,12 @@ input{
     background-color: black;
     border-color: white;
     border-width: 2px;
+    outline: none;
     
+}
+
+button{
+    color: white;
+    background-color: black;
+    border-color: white;
 }
