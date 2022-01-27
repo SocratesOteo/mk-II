@@ -9,7 +9,9 @@ app.use(express.json())
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname, '../login.html'));
 });
-
+app.get('/styles',(req, res) => {
+    res.sendFile(path.join(__dirname,'../login.css'))
+})
 
 
 app.listen(port, () => {
