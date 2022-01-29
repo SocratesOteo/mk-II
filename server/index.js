@@ -1,3 +1,4 @@
+//const{seed}= ('./seed.js')
 
 
 const express = require('express')
@@ -10,6 +11,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+const {CONNECTION_STRING} = process.env
+require('dotenv').config()
+
+
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname, '../login.html'));
 });
@@ -17,6 +22,11 @@ app.get('/styles',(req, res) => {
     res.sendFile(path.join(__dirname,'../login.css'))
 })
 
+app.get('/js',(req,res)=>{
+    res.sendFile(path.join(__dirname,'./seed.js'))
+})
+
+//app.post('/seed', seed)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

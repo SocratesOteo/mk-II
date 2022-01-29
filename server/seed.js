@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize')
 
+const {CONNECTION_STRING} = process.env
 require('dotenv').config()
 
 const Sequelize = require('sequelize')
@@ -14,21 +14,22 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 })
 
 module.exports = {
-    seed: (req,res)=>{
+    seed: (req,res) =>{
         sequelize.query(`
-        drop table if exists users
+        drop table if exists users;
 
-        CREATE TABLE users(
-            user_id SERIAL PRIMARY KEY,
-            username VARCHAR,
-            password TEXT
-        )
-
-
-        `).then(()=>{
-            console.log('db seeded')
+        create table users (
+            user_id SERIAL PRIMARY KEY
+            username VARCHAR
+            user_pass TEXT
+        );
+        `).then(() => {
+            console.log('DB seeded!')
             res.sendStatus(200)
-        }).catch(err => console.log('error sending database'))
+        }).catch(err => console.log('error seeding DB', err))
+    },
+    createUser: (req,res)=>{
 
     }
 }
+
