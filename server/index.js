@@ -16,14 +16,17 @@ require('dotenv').config()
 
 
 app.get('/',function(req,res) {
-  res.sendFile(path.join(__dirname, '../login.html'));
+  res.sendFile(path.join(__dirname, './login.html'));
 });
 app.get('/styles',(req, res) => {
-    res.sendFile(path.join(__dirname,'../login.css'))
+    res.sendFile(path.join(__dirname,'./login.css'))
 })
 
 app.get('/js',(req,res)=>{
-    res.sendFile(path.join(__dirname,'./seed.js'))
+    res.sendFile(path.join(__dirname,'../seed.js'))
+})
+app.get('/js',(req,res)=>{
+    res.sendFile(path.join(__dirname,'./login.js'))
 })
 
 //app.post('/seed', seed)
