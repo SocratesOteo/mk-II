@@ -48,6 +48,6 @@ app.post('/user',(req,res)=>{
         INSTERT INTO users(username,password,email)
         VALUES('${username}', '${email},'${password}');
     
-    `).then(dbRes => res.status(200).send(dbRes))
+    `).then(dbRes => res.status(200).send(dbRes[0]))
 
 })
