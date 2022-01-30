@@ -45,8 +45,8 @@ app.get('/seed', (req,res)=>{
 app.post('/user',(req,res)=>{
     const{username,email,password}= req.body
     sequelize.query(`
-        INSERT INTO users(username,password,email)
-        VALUES("${username}"," ${password}","${email}");
+        INSERT INTO users
+        VALUES(user_id,"${username}"," ${password}","${email}");
     
     `).then(dbRes => res.status(200).send(dbRes[0]))
 
