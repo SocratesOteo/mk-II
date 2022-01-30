@@ -23,7 +23,7 @@ const { send } = require('process')
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname, '../login.html'));
 });
-app.get('/styles',(req, res) => {
+app.get('/login.css',(req, res) => {
     res.sendFile(path.join(__dirname,'../login.css'))
 })
 
