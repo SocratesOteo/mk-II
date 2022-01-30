@@ -27,7 +27,7 @@ app.get('/styles',(req, res) => {
     res.sendFile(path.join(__dirname,'../login.css'))
 })
 
-app.get('/controller.js',(req,res)=>{
+app.get('/js',(req,res)=>{
     res.sendFile(path.join(__dirname,'./controller.js'))
 })
 app.get('/login.js',(req,res)=>{
