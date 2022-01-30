@@ -34,8 +34,8 @@ app.get('/seed', (req,res)=>{
         user_id SERIAL PRIMARY KEY,
         username VARCHAR,
         password TEXT,
-        EMAIL VARCHAR
-    )
+        email VARCHAR
+    );
     `).then(()=>{
         console.log('db seeded')
         res.status(200)
