@@ -51,3 +51,8 @@ app.post('/user',(req,res)=>{
     `).then(dbRes => res.status(200).send(dbRes[0]))
 
 })
+
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+  })
