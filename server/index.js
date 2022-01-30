@@ -1,4 +1,4 @@
-//const{seed}= ('./seed.js')
+//const {seed} = require('./seed.js')
 
 
 const express = require('express')
@@ -13,6 +13,20 @@ app.use(cors())
 
 const {CONNECTION_STRING} = process.env
 require('dotenv').config()
+
+const Sequelize = require('sequelize')
+const res = require('express/lib/response')
+const { send } = require('process')
+
+
+const sequelize = new Sequelize(CONNECTION_STRING, {
+    dialect: 'postgres', 
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+})
 
 
 app.get('/',function(req,res) {
@@ -29,7 +43,31 @@ app.get('/js',(req,res)=>{
     res.sendFile(path.join(__dirname,'../login.js'))
 })
 
-//app.post('/seed', seed)
+app.get('/seed', (req,res)=>{
+    sequelize.query(`
+    drop table if exists users;
+
+    create table users(
+        user_id SERIAL PRIMARY KEY,
+        username VARCHAR,
+        password TEXT,
+        EMAIL VARCHAR
+    )
+    `).then(()=>{
+        console.log('db seeded')
+        res.status(200)
+    })
+})
+
+app.post('/user',(req,res)=>{
+    const{username,email,password}= req.body
+    sequelize.query(`
+        INSTERT INTO users(username,password,email)
+        VALUES('${username}', '${email},'${password}');
+    
+    `).then(dbRes => res.status(200).send(dbRes))
+
+})
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
