@@ -33,7 +33,7 @@ app.get('/seed', (req,res)=>{
     create table users(
         user_id SERIAL PRIMARY KEY,
         username VARCHAR,
-        password TEXT,
+        password VARCHAR,
         email VARCHAR
     );
     `).then(()=>{
