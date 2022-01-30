@@ -17,7 +17,7 @@ function handleRegisterSubmit(e){
         }
         console.log(body)
     
-        axios.post('http://localhost:5777/user' || 'https://treasure-hunt-testing.herokuapp.com/',body)
+        axios.post('http://localhost:5777/user' || 'https://tec2-44-199-49-128.compute-1.amazonaws.com/',body)
         .then(()=>{
             console.log('info sent over')
         })
