@@ -23,9 +23,7 @@ const { send } = require('process')
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname, '../login.html'));
 });
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../login.html'))
-})
+
 app.get('/home',(req,res)=>{
     res.sendFile(__dirname,'../home.html')
 })
