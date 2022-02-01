@@ -1,20 +1,6 @@
 
-const express = require('express')
-require('dotenv').config()
-const path = require('path')
-const cors = require('cors')
-const port = process.env.PORT || process.env.SERVER_PORT
-
-const app = express()
-app.use(express.json())
-app.use(cors())
-
 const {CONNECTION_STRING} = process.env
-require('dotenv').config()
-
 const Sequelize = require('sequelize')
-const res = require('express/lib/response')
-const { send } = require('process')
 
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
@@ -26,33 +12,26 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 })
 
-app.get('/seed', (req,res)=>{
-    sequelize.query(`
-    drop table if exists users;
-
-    create table users(
-        user_id SERIAL PRIMARY KEY,
-        username VARCHAR,
-        password VARCHAR,
-        email VARCHAR
-    );
-    `).then(()=>{
-        console.log('db seeded')
-        res.status(200)
-    })
-})
-
-app.post('/user',(req,res)=>{
-    const{username,email,password}= req.body
-    sequelize.query(`
-        INSERT INTO users (username, password, email)
-        VALUES('${username}',' ${password}','${email}');
+module.exports = {
+    seed: (req,res) => {
+        sequelize.query(`
+        drop table if exists users;
     
-    `).then(dbRes => res.status(200).send(dbRes[0]))
-
-})
-
-
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-  })
+        create table users(
+            user_id SERIAL PRIMARY KEY,
+            username VARCHAR,
+            password VARCHAR,
+            email VARCHAR
+        );`).then(()=>{
+            console.log('db seeded')
+            res.sendStatus(200)
+        })
+    },
+    login: (req,res) => {
+        const{username,email,password}= req.body
+        sequelize.query(`
+            INSERT INTO users (username, password, email)
+            VALUES('${username}',' ${password}','${email}');
+        `).then(dbRes => res.status(200).send(dbRes[0]))
+    }
+}

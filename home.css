@@ -2,4 +2,60 @@ body {
     background-color: black;
     color: white;
     font-family: 'Inconsolata', monospace;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-between;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*
+#buttons {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: space-between;
+    width: vw;
+}
+*/
+#puzzles-button{
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    border-width: 5px;
+    border-color: white;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+    width: 100vh;
+
+}
+
+
+#leaderboard-button{
+
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    border-width: 5px;
+    border-color: white;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+    width: 100vh;
+}
+
+#leaderboard-button-title{
+   
 }

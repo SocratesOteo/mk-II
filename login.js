@@ -5,6 +5,8 @@ const email = document.querySelector('#registration-email')
 const  newPassword = document.querySelector('#new-password')
 const  confirmPassword = document.querySelector('#confirm-new-password')
 
+const baseUrl = 'https://treasure-hunt-testing.herokuapp.com/user' || 'http://localhost:5777/user'
+
 function handleRegisterSubmit(e){
     e.preventDefault()
     if(newPassword.value == confirmPassword.value){
@@ -17,16 +19,12 @@ function handleRegisterSubmit(e){
         }
         console.log(body)
     
-        axios.post('http://localhost:5777/user' || 'https://treasure-hunt-testing.herokuapp.com/user',body)
+        axios.post(`${baseURL}/user`, body)
         .then(()=>{
             console.log('info sent over')
-            window.location.href = 'home.html'
+            window.location.href = `${baseURL}/home`
         })
-
-        axios.get()
-
     } else if (newPassword.value != confirmPassword.value){
-        
         alert('Passwords Must Match')
     }
 
