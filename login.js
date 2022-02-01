@@ -19,7 +19,7 @@ function handleRegisterSubmit(e){
         }
         console.log(body)
     
-        axios.post(`${baseURL}/user`, body)
+        axios.post(`${baseURL}/user` || 'http://localhost:5777/user', body)
         .then(()=>{
             console.log('info sent over')
             window.location.href = `${baseURL}/home`
