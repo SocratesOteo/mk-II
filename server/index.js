@@ -12,6 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 const {seed, login} = require("./controller.js");
+const { get } = require('express/lib/response')
 
 app.get('/',function(req,res) {
   res.sendFile(path.join(__dirname, '../login.html'));
@@ -31,7 +32,7 @@ app.get('/login',(req,res)=>{
     res.sendFile(path.join(__dirname,'../login.js'))
 })
 
-app.post('/seed', seed);
+app.get('/seed', seed);
 app.post('/user', login);
 
 app.listen(port, () => {

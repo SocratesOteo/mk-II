@@ -5,7 +5,7 @@ const email = document.querySelector('#registration-email')
 const  newPassword = document.querySelector('#new-password')
 const  confirmPassword = document.querySelector('#confirm-new-password')
 
-const baseUrl = 'https://treasure-hunt-testing.herokuapp.com/user' || 'http://localhost:5777/user'
+const baseURL = 'https://treasure-hunt-testing.herokuapp.com' || 'http://localhost:5777'
 
 function handleRegisterSubmit(e){
     e.preventDefault()
