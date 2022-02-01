@@ -25,7 +25,7 @@ app.get('/',function(req,res) {
 });
 
 app.get('/home',(req,res)=>{
-    res.sendFile(__dirname,'../home.html')
+    res.sendFile(__dirname,'http://localhost:5777/home.html')
 })
 app.get('/styles',(req, res) => {
     res.sendFile(path.join(__dirname,'../login.css'))

@@ -20,7 +20,7 @@ function handleRegisterSubmit(e){
         axios.post('http://localhost:5777/user' || 'https://tec2-44-199-49-128.compute-1.amazonaws.com/user',body)
         .then(()=>{
             console.log('info sent over')
-            window.location.assign('https://treasure-hunt-testing.herokuapp.com/home.html ')
+            window.location.assign('/home')
         })
     } else if (newPassword.value != confirmPassword.value){
         
