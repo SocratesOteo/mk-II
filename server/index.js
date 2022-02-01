@@ -31,6 +31,11 @@ app.get('/styles',(req, res) => {
 app.get('/login',(req,res)=>{
     res.sendFile(path.join(__dirname,'../login.js'))
 })
+// home page
+
+app.get('/styles1',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../home.css'))
+})
 
 app.get('/seed', seed);
 app.post('/user', login);
