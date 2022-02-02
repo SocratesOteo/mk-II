@@ -1,5 +1,6 @@
 
 
+
 console.log('hello world')
 
 const loginForm = document.querySelector('#login-form')
@@ -44,18 +45,15 @@ function handleLoginSubmit(e){
         password: password.value,
     }
 
-    axios.post(`${baseURL}/login`, body)
-    .then(()=>{
+    axios.post(`http://localhost:5777/login`, body)
+    .then((res)=>{
+
         console.log ('it worked')
-        /*
-        if (body === true){
-            window.location.href = `${baseURL}/home`
-        } else if (body === false){
-            alert('login information is incorrect')
-        }else {
-            alert("no no no")
+        if (res.bodyTrue === true){
+            window.location.href = `http://localhost:5777/home`
+        } else if (res.bodyTrue === false){
+            alert('username or password is wrong')
         }
-        */
     })
 
 }

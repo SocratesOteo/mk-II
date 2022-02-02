@@ -1,9 +1,11 @@
 
-//const {CONNECTION_STRING} = process.env
+const {CONNECTION_STRING} = process.env
+
+//const port  = process.env.SERVER_PORT
 const Sequelize = require('sequelize')
 
 
-const sequelize = new Sequelize("postgres://qmuhgjkfssojcp:18b84c1a99db5defcf8d2c97dfaa7fb7a02c68146f12cfbc9150e5145e9da983@ec2-44-199-49-128.compute-1.amazonaws.com:5432/d6r5vfsds99bf1", {
+const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres', 
     dialectOptions: {
         ssl: {
@@ -31,21 +33,28 @@ module.exports = {
         const{username,email,password}= req.body
         sequelize.query(`
             INSERT INTO users (username, password, email)
-            VALUES('${username}',' ${password}','${email}');
+            VALUES('${username}','${password}','${email}');
         `).then(dbRes => res.status(200).send(dbRes[0]))
     },
     login: (req,res)=>{
         const {username,password} = req.body
 
         sequelize.query(`
-        SELECT username, password
+        SELECT username,password
         FROM users
-        WHERE username = ${username}
-        AND password = ${password}
-        ;`).then(()=>{
-            //let bodyTrue = true
-            res.status(200).send('it worked')
+        WHERE username = '${username}'
+       
+        ;`).then((dbRes)=>{
+            console.log(dbRes[0])
+            if (dbRes[0]){
+             bodyTrue = true
+            res.status(200).send(bodyTrue)
+            }else {
+                bodyTrue = false
+                res.status(200).send(bodyTrue)
+            }
         }
         )
     }
 }
+
