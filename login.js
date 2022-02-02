@@ -21,8 +21,7 @@ function handleRegisterSubmit(e){
         let body = {
             username: newUsername.value,
             email: email.value,
-            password: newPassword.value
-                
+            password: newPassword.value  
             
         }
         console.log(body)
@@ -37,7 +36,7 @@ function handleRegisterSubmit(e){
     }
 
 }
-
+/*
 function handleLoginSubmit(e){
     e.preventDefault()
     let body  = {
@@ -57,6 +56,6 @@ function handleLoginSubmit(e){
     })
 
 }
-
+*/
 registerForm.addEventListener('submit',handleRegisterSubmit)
 loginForm.addEventListener('submit', handleLoginSubmit)
