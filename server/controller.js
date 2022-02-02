@@ -1,5 +1,5 @@
 
-const {CONNECTION_STRING} = process.env
+const {CONNECTION_STRING} =process.env
 
 //const port  = process.env.SERVER_PORT
 const Sequelize = require('sequelize')
