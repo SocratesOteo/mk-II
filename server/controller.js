@@ -43,10 +43,7 @@ module.exports = {
         WHERE username = ${username}
         AND password = ${password}
         ;`).then(()=>{
-            let body = {
-            usernameTrue: true,
-            passwordTrue: true
-            }
+            let body = true
             res.status(200).send(body)
         }
         ).catch(()=>{

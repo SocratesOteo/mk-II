@@ -44,10 +44,10 @@ function handleLoginSubmit(e){
 
     axios.post(`${baseURL}/login`, body)
     .then(()=>{
-        const {usernameTrue, passwordTrue} = res.body
-        if (usernameTrue === true && passwordTrue === true){
+        
+        if (res.body == true){
             window.location.href = `${baseURL}/home`
-        } else if (res.body === false){
+        } else if (res.body == false){
             alert('login information is incorrect')
         }else {
             alert("no no no")
