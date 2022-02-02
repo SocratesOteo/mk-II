@@ -44,12 +44,8 @@ module.exports = {
         AND password = ${password}
         ;`).then(()=>{
             //let bodyTrue = true
-            res.status(200).redirect(`https://treasure-hunt-testing.herokuapp.com/home`)
+            res.status(200).send('it worked')
         }
-        ).catch(()=>{
-            let bodyFalse = false
-            res.status(200).send(bodyFalse)
-
-        })
+        )
     }
 }
