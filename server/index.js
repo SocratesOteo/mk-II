@@ -37,6 +37,14 @@ app.get('/styles1',(req,res)=>{
     res.sendFile(path.join(__dirname,'../home.css'))
 })
 
+app.get('/homejs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../home.js'))
+})
+
+app.get('/leaderboard',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../leaderboard.html'))
+})
+
 app.get('/seed', seed);
 app.post('/user', login);
 
