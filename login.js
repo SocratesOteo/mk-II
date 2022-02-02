@@ -44,13 +44,13 @@ function handleLoginSubmit(e){
         password: password.value,
     }
 
-    axios.post(`${baseURL}/login`, body)
+    axios.post( `http://localhost:5777/login`, body)
     .then((res)=>{
 
         console.log ('it worked')
-        if (res.bodyTrue === true){
+        if (res.body.bodyTrue.value == true){
             window.location.href = `${baseURL}/home`
-        } else if (res.bodyTrue === false){
+        } else if (res.body.bodyTrue == false){
             alert('username or password is wrong')
         }
     })

@@ -1,5 +1,5 @@
 require('dotenv').config()
-const {CONNECTION_STRING} =process.env
+const CONNECTION_STRING =process.env.DATABASE_URL || process.env.CONNECTION_STRING
 
 //const port  = process.env.SERVER_PORT
 const Sequelize = require('sequelize')
