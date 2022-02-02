@@ -47,9 +47,9 @@ function handleLoginSubmit(e){
     axios.post(`${baseURL}/login`, body)
     .then(()=>{
         
-        if (res.body == true){
+        if (body == true){
             window.location.href = `${baseURL}/home`
-        } else if (res.body == false){
+        } else if (body == false){
             alert('login information is incorrect')
         }else {
             alert("no no no")
