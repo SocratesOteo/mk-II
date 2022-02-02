@@ -36,7 +36,7 @@ function handleRegisterSubmit(e){
     }
 
 }
-/*
+
 function handleLoginSubmit(e){
     e.preventDefault()
     let body  = {
@@ -56,6 +56,6 @@ function handleLoginSubmit(e){
     })
 
 }
-*/
+
 registerForm.addEventListener('submit',handleRegisterSubmit)
 loginForm.addEventListener('submit', handleLoginSubmit)
