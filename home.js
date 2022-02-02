@@ -8,4 +8,11 @@ function clickLeaderBoard(){
     window.location.href = `${baseURL}/leaderboard`
 }
 
+function clickPuzzles(){
+    window.location.href = `${baseURL}/puzzles`
+}
+
+
+
 leaderboardButton.addEventListener('click', clickLeaderBoard)
+

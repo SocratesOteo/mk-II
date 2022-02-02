@@ -41,9 +41,25 @@ app.get('/homejs',(req,res)=>{
     res.sendFile(path.join(__dirname,'../home.js'))
 })
 
+//leaderboard page
+
 app.get('/leaderboard',(req,res)=>{
     res.sendFile(path.join(__dirname,'../leaderboard.html'))
 })
+
+app.get('/styles-leaderboard',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../leaderboard.css'))
+})
+
+
+// puzzles page
+app.get('/puzzles', (req,res)=> {
+    res.sendFile(path.join(__dirname,'../puzzles.html'))
+})
+app.get('/styles-puzzles', (req,res)=>{
+    res.sendFile(path.join(__dirname,'../puzzles.css'))
+})
+
 
 app.get('/seed', seed);
 app.post('/user', login);
