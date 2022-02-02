@@ -1,6 +1,8 @@
-const res = require("express/lib/response")
+
 
 console.log('hello world')
+
+const loginForm = document.querySelector('#login-form')
 const registerForm = document.querySelector('#register-form')
 const newUsername = document.querySelector('#new-username')
 const email = document.querySelector('#registration-email')
@@ -57,3 +59,4 @@ function handleLoginSubmit(e){
 }
 
 registerForm.addEventListener('submit',handleRegisterSubmit)
+loginForm.addEventListener('submit', handleLoginSubmit)
