@@ -27,11 +27,32 @@ module.exports = {
             res.sendStatus(200)
         })
     },
-    login: (req,res) => {
+    register: (req,res) => {
         const{username,email,password}= req.body
         sequelize.query(`
             INSERT INTO users (username, password, email)
             VALUES('${username}',' ${password}','${email}');
         `).then(dbRes => res.status(200).send(dbRes[0]))
+    },
+    login: (req,res)=>{
+        const {username,password} = req.body
+
+        sequelize.query(`
+        SELECT username, password
+        FROM users
+        WHERE username = ${username}
+        AND password = ${password}
+        ;`).then(()=>{
+            let body = {
+            usernameTrue = true,
+            passwordTrue = true
+            }
+            res.status(200).send(body)
+        }
+        ).catch(()=>{
+            let body = false
+            res.status(200).send(body)
+
+        })
     }
 }

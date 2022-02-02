@@ -15,4 +15,6 @@ function clickPuzzles(){
 
 
 leaderboardButton.addEventListener('click', clickLeaderBoard)
+puzzlesButton.addEventListener('click',clickPuzzles)
+
 
