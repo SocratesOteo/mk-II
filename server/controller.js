@@ -44,8 +44,8 @@ module.exports = {
         AND password = ${password}
         ;`).then(()=>{
             let body = {
-            usernameTrue = true,
-            passwordTrue = true
+            usernameTrue: true,
+            passwordTrue: true
             }
             res.status(200).send(body)
         }
