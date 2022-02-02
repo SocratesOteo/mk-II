@@ -49,9 +49,9 @@ function handleLoginSubmit(e){
             window.location.href = `${baseURL}/home`
         } else if (res.body === false){
             alert('login information is incorrect')
-        }else (
+        }else {
             alert("no no no")
-        )
+        }
     })
 
 }
