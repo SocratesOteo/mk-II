@@ -19,18 +19,41 @@ function handleRegisterSubmit(e){
     e.preventDefault()
     if(newPassword.value == confirmPassword.value){
         let body = {
-            username: newUsername.value,
-            email: email.value,
-            password: newPassword.value  
+            username:newUsername.value,
+            email:email.value,
+            password:newPassword.value  
             
         }
         console.log(body)
-    
-        axios.post(`${baseURL}/user` || 'http://localhost:5777/user', body)
-        .then(()=>{
+        //`${baseURL}/user`
+        axios.post('http://localhost:5777/user', body)
+        .then((res)=>{
             console.log('info sent over')
-            window.location.href = `${baseURL}/home`
+            console.log(res)
+            console.log(res.data)
+            console.log(res.data.length)
+            console.log(res.data[0])
+            //console.log(res.data[0].username)
+          //  window.location.href = `${baseURL}/home`
+          
+            if (res.data.length > 0){
+                if (res.data[0].username == newUsername.value){
+                  alert('username is already in use')
+                }else if (res.data[0].email == email.value){
+                    alert('email is already in use')
+
+              } else if (res.data.length <= 0){
+                 alert(' new user has been added')
+                //window.location.href = `${baseURL}/home`
+
+
+              }
+
+
+          }
+          
         })
+        
     } else if (newPassword.value != confirmPassword.value){
         alert('Passwords Must Match')
     }
@@ -44,13 +67,18 @@ function handleLoginSubmit(e){
         password: password.value,
     }
 
-    axios.post( `http://localhost:5777/login`, body)
+    axios.post(`http://localhost:5777/login`, body)
     .then((res)=>{
-
+        
+        console.log(res)
+        console.log(res.data)
+        console.log(res.data[0])
+        console.log(res.data[0].username)
         console.log ('it worked')
-        if (res.body.bodyTrue.value == true){
+        
+        if (res.data[0].username == username.value && res.data[0].password == password.value){
             window.location.href = `${baseURL}/home`
-        } else if (res.body.bodyTrue == false){
+        } else if (res.data[0].username != username.value || res.data[0].password != password.value){
             alert('username or password is wrong')
         }
     })

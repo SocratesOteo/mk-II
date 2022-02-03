@@ -30,12 +30,41 @@ module.exports = {
             res.sendStatus(200)
         })
     },
-    register: (req,res) => {
-        const{username,email,password}= req.body
-        sequelize.query(`
-            INSERT INTO users (username, password, email)
-            VALUES('${username}','${password}','${email}');
-        `).then(dbRes => res.status(200).send(dbRes[0]))
+    /*
+    
+    */
+   
+   register: (req,res) => {
+       const{username,email,password}= req.body
+       console.log(req.body)
+       sequelize.query(`
+       SELECT username,email
+       FROM users
+       WHERE username = '${username}'
+       AND email = '${email}'
+       
+       ;
+       `).then((dbRes) => {
+           console.log(dbRes)
+           console.log(dbRes[0])
+           console.log(dbRes.length)
+           //console.log(dbRes[0])
+           //console.log(username)
+
+            if( dbRes[0].length <= 0) {
+                sequelize.query(`
+                INSERT INTO users (username, password, email)
+                       VALUES('${username}','${password}','${email}');
+                `).then((dbRes)=>{
+                    res.status(200).send(dbRes[0])
+                })
+            } else if(dbRes[0].username == username.value || dbRes[0].email == email.value){
+                console.log(dbRes)
+                res.status(200).send(dbRes[0])
+            }
+            
+            //res.status(200).send(dbRes[0])
+        })
     },
     login: (req,res)=>{
         const {username,password} = req.body
@@ -43,17 +72,13 @@ module.exports = {
         sequelize.query(`
         SELECT username,password
         FROM users
-        WHERE username = '${username}'
+        WHERE username ='${username}'
+        AND password ='${password}'
        
         ;`).then((dbRes)=>{
             console.log(dbRes[0])
-            if (dbRes[0]){
-             bodyTrue = true
-            res.status(200).send(bodyTrue)
-            }else {
-                bodyTrue = false
-                res.status(200).send(bodyTrue)
-            }
+            res.status(200).send(dbRes[0])
+            
         }
         )
     }
