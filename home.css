@@ -28,7 +28,7 @@ body {
     background-color: black;
     color: white;
     font-size: 45px;
-    border-width: 5px;
+    border-width: 2px;
     border-color: white;
     display: flex;
 	flex-direction: column;
@@ -48,7 +48,7 @@ body {
     background-color:  #c4c4c4;
     color: white;
     font-size: 40px;
-    border-width: 10px;
+    border-width: 2px;
     border-color: white;
     display: flex;
 	flex-direction: column;
