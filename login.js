@@ -26,7 +26,7 @@ function handleRegisterSubmit(e){
         }
         console.log(body)
         //`${baseURL}/user`
-        axios.post('http://localhost:5777/user', body)
+        axios.post(`${baseURL}/home` ||'http://localhost:5777/user', body)
         .then((res)=>{
             console.log('info sent over')
             console.log(res)
@@ -44,7 +44,7 @@ function handleRegisterSubmit(e){
 
               } else if (res.data.length <= 0){
                  alert(' new user has been added')
-                //window.location.href = `${baseURL}/home`
+                window.location.href = `${baseURL}/home`
 
 
               }
@@ -67,7 +67,7 @@ function handleLoginSubmit(e){
         password: password.value,
     }
 
-    axios.post(`http://localhost:5777/login`, body)
+    axios.post( `${baseURL}/home `|| ` http://localhost:5777/login`, body)
     .then((res)=>{
         
         console.log(res)
