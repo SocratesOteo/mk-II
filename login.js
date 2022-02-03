@@ -26,7 +26,7 @@ function handleRegisterSubmit(e){
         }
         console.log(body)
         //`${baseURL}/user`
-        axios.post(`${baseURL}/home` ||'http://localhost:5777/user', body)
+        axios.post('http://localhost:5777/user' || `${baseURL}/user`, body)
         .then((res)=>{
             console.log('info sent over')
             console.log(res)
@@ -67,7 +67,7 @@ function handleLoginSubmit(e){
         password: password.value,
     }
 
-    axios.post( `${baseURL}/home `|| ` http://localhost:5777/login`, body)
+    axios.post( ` http://localhost:5777/login` || `${baseURL}/login `, body)
     .then((res)=>{
         
         console.log(res)
