@@ -50,10 +50,10 @@ app.get('/leaderboard',(req,res)=>{
 app.get('/styles-leaderboard',(req,res)=>{
     res.sendFile(path.join(__dirname,'../leaderboard.css'))
 })
-app.get('/puzzlesjs',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../puzzles.js'))
-})
 
+app.get('/leaderboardjs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../leaderboard.js'))
+})
 
 // puzzles page
 app.get('/puzzles', (req,res)=> {
@@ -63,6 +63,9 @@ app.get('/styles-puzzles', (req,res)=>{
     res.sendFile(path.join(__dirname,'../puzzles.css'))
 })
 
+app.get('/puzzlesjs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../puzzles.js'))
+})
 
 app.get('/seed', seed);
 app.post('/user',register);
