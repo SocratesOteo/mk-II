@@ -1,0 +1,45 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'W95FA';
+    
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+#create-puzzle-button{
+    font-family: 'W95FA';
+    color: white;
+    background-color: black;
+    font-size: 30px;
+    height: 10vh;
+    width: 40vw;
+    border-width: 3px;
+
+
+}
+
+#live-puzzles-header{
+    display: flex;
+    position: relative;
+    top: 30px;
+}
+
+#live-puzzles-div{
+    border-width: 5px;
+    border-color: white;
+    border: solid;
+    background-color:#272727 ;
+    width: 60.9vw;
+    height: 60%;
+    position: relative;
+    top: 55px
+    
+}

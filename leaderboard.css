@@ -1,12 +1,13 @@
 body {
     background-color: black;
     color: white;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'W95FA';
     display: flex;
-	
-	justify-content: center;
-	align-items: baseline;
-	align-content: space-between;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
     height: 100vh;
     width: 100vw;
 }
@@ -17,15 +18,21 @@ body {
     border-color: white;
     border-width: 5px;
     border-style: outset;
-    background-color: #c4c4c4;
+    background-color: black;
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 #leaderboard-background{
     background-color:#272727 ;
-    width: 60vw;
-    
+    width: 60.9vw;
+    height: 80%;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+
+
 }
 
 

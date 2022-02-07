@@ -1,0 +1,68 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'W95FA';
+    
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+    height: 100vh;
+    width: 100vw;
+}
+
+#make-puzzle-header{
+    color: white;
+}
+
+#question-div{
+    width: 50vw;
+    height: 20vh;
+    
+
+}
+#question{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border: solid;
+    border-color: white;
+    border-width: 5px;
+    color:white;
+    font-size: x-large;
+    outline: none;
+    resize: none;
+}
+
+#answer-div{
+    width: 50vw;
+    height: 20vh;
+    
+}
+
+#answer{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border: solid;
+    border-color: white;
+    border-width: 5px;
+    color:white;
+    font-size: x-large;
+    outline: none;
+    vertical-align: baseline;
+    resize: none;
+}
+
+
+button{
+    background-color: black;
+    color: white;
+    font-family: 'W95FA';
+    height: 40px;
+    width: 100px;
+    font-size: larger;
+    outline-color: red;
+}
