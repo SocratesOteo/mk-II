@@ -43,3 +43,8 @@ body {
     top: 55px
     
 }
+
+button{
+    outline-color: red;
+}
+

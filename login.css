@@ -16,5 +16,6 @@ button{
     color: white;
     background-color: black;
     border-color: white;
+    outline-color: red;
 }
 

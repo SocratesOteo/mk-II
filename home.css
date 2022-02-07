@@ -87,5 +87,7 @@ body {
     top: -50px;
 }
 
-
+button{
+    outline-color: red;
+}
 

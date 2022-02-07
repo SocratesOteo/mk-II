@@ -14,24 +14,25 @@ body {
 
 #leaderboard-title {
     width: 60vw;
-/*    height: 30vh;  */
+    height: 10vh;  
     border-color: white;
     border-width: 5px;
     border-style: outset;
     background-color: black;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    
+    
 }
 
 #leaderboard-background{
     background-color:#272727 ;
-    width: 60.9vw;
-    height: 60%;
+    width: 60vw;
+    height: 75%;
     border-color: white;
     border-style: solid;
     border-width: 5px;
-
 
 }
 
@@ -46,4 +47,8 @@ body {
     position:relative;
     left: -445px;
     top: -70px;
+}
+
+button{
+    outline-color: red;
 }
