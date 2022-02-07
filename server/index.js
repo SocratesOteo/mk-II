@@ -67,6 +67,26 @@ app.get('/puzzlesjs',(req,res)=>{
     res.sendFile(path.join(__dirname,'../puzzles.js'))
 })
 
+app.get('/masterjs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../master.js'))
+})
+
+app.get('styles-master',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../master.css'))
+})
+
+app.get('/master',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../master.html'))
+})
+
+app.get('/create-puzzle',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../make-puzzle.html'))
+})
+app.get('/styles-create-puzzle',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../make-puzzle.css'))
+})
+
+
 app.get('/seed', seed);
 app.post('/user',register);
 app.post('/login',login)
