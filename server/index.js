@@ -50,6 +50,9 @@ app.get('/leaderboard',(req,res)=>{
 app.get('/styles-leaderboard',(req,res)=>{
     res.sendFile(path.join(__dirname,'../leaderboard.css'))
 })
+app.get('/puzzlesjs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../puzzles.js'))
+})
 
 
 // puzzles page
