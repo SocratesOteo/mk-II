@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const {seed, register, login} = require("./controller.js");
+const {seed, register, login, addPuzzle, getPuzzle} = require("./controller.js");
 
 
 app.get('/',function(req,res) {
@@ -95,7 +95,8 @@ app.get('/create-puzzlejs',(req,res)=>{
 app.get('/seed', seed);
 app.post('/user',register);
 app.post('/login',login)
-//app.post('/puzzle',addPuzzle)
+app.post('/puzzle',addPuzzle)
+app.get('/get-puzzles',getPuzzle)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
