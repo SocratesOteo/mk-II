@@ -99,7 +99,7 @@ module.exports = {
 
         sequelize.query(`
         INSERT INTO puzzles(question,answer,six_hours_value,twelve_hours_value,twenty_four_hours_value)
-        VALUES('${questionBox}','${answerBox}',${sixHours},${twelveHours},${twentyFourHours});
+        VALUES('${questionBox}','${answerBox}','${sixHours}','${twelveHours}','${twentyFourHours}');
         
         `).then((dbRes)=>{
             res.status(200).send(dbRes)
