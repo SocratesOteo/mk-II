@@ -11,7 +11,7 @@ function backLink(){
 function getPuzzle(){
     axios.get('http://localhost:5777/get-puzzles'|| `${baseURL}/get-puzzles`).
     then((res)=>{
-
+        console.log(res)
     })
 }
 

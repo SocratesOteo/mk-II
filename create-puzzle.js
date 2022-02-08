@@ -77,7 +77,7 @@ sixHoursButton.addEventListener('click',sixHoursClicked)
 twelveHoursButton.addEventListener('click',twelveHoursClicked)
 twentyFourHoursButton.addEventListener('click',twentyFourHoursClicked)
 
-createPuzzleButton.addEventListener('click',createPuzzle)
+createButton.addEventListener('click',createPuzzle)
 
 
 
