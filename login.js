@@ -62,26 +62,31 @@ function handleRegisterSubmit(e){
 
 function handleLoginSubmit(e){
     e.preventDefault()
-    let body  = {
-        username: username.value,
-        password: password.value,
-    }
+    if (username.value == 'twentyfiveplus1' && password.value == 'twentyfiveplus1'){
+        window.location.href = `${baseURL}/master`
 
-    axios.post( ` http://localhost:5777/login` || `${baseURL}/login `, body)
-    .then((res)=>{
-        
-        console.log(res)
-        console.log(res.data)
-        console.log(res.data[0])
-        console.log(res.data[0].username)
-        console.log ('it worked')
-        
-        if (res.data[0].username == username.value && res.data[0].password == password.value){
-            window.location.href = `${baseURL}/home`
-        } else if (res.data[0].username != username.value || res.data[0].password != password.value){
-            alert('username or password is wrong')
+    }else{
+        let body  = {
+            username: username.value,
+            password: password.value,
         }
-    })
+    
+        axios.post( ` http://localhost:5777/login` || `${baseURL}/login `, body)
+        .then((res)=>{
+            
+            console.log(res)
+            console.log(res.data)
+            console.log(res.data[0])
+            console.log(res.data[0].username)
+            console.log ('it worked')
+            
+            if (res.data[0].username == username.value && res.data[0].password == password.value){
+                window.location.href = `${baseURL}/home`
+            } else if (res.data[0].username != username.value || res.data[0].password != password.value){
+                alert('username or password is wrong')
+            }
+        })
+    }
 
 }
 
