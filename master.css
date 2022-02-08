@@ -44,6 +44,18 @@ body {
     
 }
 
+#log-out{
+    color: white;
+    background-color: black;
+    border-width: 4px;
+}
+
+#log-out-div{
+    position: relative;
+    left: -400px;
+    top: -20px;
+}
+
 button{
     outline-color: red;
 }

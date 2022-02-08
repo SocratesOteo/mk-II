@@ -14,7 +14,7 @@ function clickPuzzles(){
 
 
 function logOut(){
-    window.location.href = `${baseURL}/`
+    window.location.replace = `${baseURL}/`
 }
 
 

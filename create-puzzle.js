@@ -59,9 +59,9 @@ function createPuzzle(){
     let body = {
         questionBox:questionBox.value,
         answerBox:answerBox.value,
-        sixHours:sixHoursButtonClicked.value,
-        twelveHours:twelveHoursButtonClicked.value,
-        twentyFourHours:twentyFourHoursButtonClicked.value
+        sixHours:sixHoursButtonClicked,
+        twelveHours:twelveHoursButtonClicked,
+        twentyFourHours:twentyFourHoursButtonClicked
 
     }
     axios.post('http://localhost:5777/puzzle'||`${baseURL}/puzzle`,body)
