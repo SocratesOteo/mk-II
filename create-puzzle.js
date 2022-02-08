@@ -1,5 +1,6 @@
 
 
+
 const questionBox = document.querySelector('#question-box')
 const answerBox = document.querySelector('#answer-box')
 const sixHoursButton = document.getElementById('6-hours-button')
@@ -9,16 +10,16 @@ const createButton = document.getElementById('create-button')
 
 const baseURL = 'https://treasure-hunt-testing.herokuapp.com' || 'http://localhost:5777'
 
-let sixHoursButtonClicked = false
-let twelveHoursButtonClicked = false
-let twentyFourHoursButtonClicked = false
+let sixHoursButtonClicked = 0
+let twelveHoursButtonClicked = 0
+let twentyFourHoursButtonClicked = 0
 
 
 function sixHoursClicked(){
 
-    twelveHoursButtonClicked = false
-    twentyFourHoursButtonClicked = false
-    sixHoursButtonClicked = true
+    twelveHoursButtonClicked = 0
+    twentyFourHoursButtonClicked = 0
+    sixHoursButtonClicked = 1
     twelveHoursButton.style.backgroundColor = 'black'
     twelveHoursButton.style.color = 'white'
     twentyFourHoursButton.style.backgroundColor = 'black'
@@ -29,9 +30,9 @@ function sixHoursClicked(){
 }
 
 function twelveHoursClicked(){
-    twelveHoursButtonClicked = true
-    twentyFourHoursButtonClicked = false
-    sixHoursButtonClicked = false
+    twelveHoursButtonClicked = 1
+    twentyFourHoursButtonClicked = 0
+    sixHoursButtonClicked = 0
     twentyFourHoursButton.style.backgroundColor = 'black'
     twentyFourHoursButton.style.color = 'white'
     sixHoursButton.style.backgroundColor = 'black'
@@ -41,9 +42,9 @@ function twelveHoursClicked(){
 }
 
 function twentyFourHoursClicked(){
-    twelveHoursButtonClicked = false
-    twentyFourHoursButtonClicked = true
-    sixHoursButtonClicked = false
+    twelveHoursButtonClicked = 0
+    twentyFourHoursButtonClicked = 1
+    sixHoursButtonClicked = 0
     twentyFourHoursButton.style.backgroundColor = 'white'
     twentyFourHoursButton.style.color = 'black'
     sixHoursButton.style.backgroundColor = 'black'
@@ -65,6 +66,7 @@ function createPuzzle(){
     }
     axios.post('http://localhost:5777/puzzle'||`${baseURL}/puzzle`,body)
     .then((res)=>{
+        console.log(res)
         window.location.href = `${baseURL}/master`
     })
 

@@ -19,7 +19,8 @@ module.exports = {
     seed: (req,res) => {
         sequelize.query(`
         drop table if exists users;
-    
+        drop table if exists puzzles;
+
         create table users(
             user_id SERIAL PRIMARY KEY,
             username VARCHAR,
@@ -31,9 +32,9 @@ module.exports = {
             puzzle_id SERIAL PRIMARY KEY,
             question VARCHAR,
             answer VARCHAR,
-            six_hours_value VARCHAR,
-            twelve_hours_value VARCHAR,
-            twenty_four_hours_value VARCHAR 
+            six_hours_value INTEGER,
+            twelve_hours_value INTEGER,
+            twenty_four_hours_value INTEGER
         );
         
         `).then(()=>{
@@ -98,7 +99,7 @@ module.exports = {
 
         sequelize.query(`
         INSERT INTO puzzles(question,answer,six_hours_value,twelve_hours_value,twenty_four_hours_value)
-        VALUES('${questionBox}','${answerBox}','${sixHours}','${twelveHours}','${twentyFourHours}');
+        VALUES('${questionBox}','${answerBox}',${sixHours},${twelveHours},${twentyFourHours});
         
         `).then((dbRes)=>{
             res.status(200).send(dbRes)
