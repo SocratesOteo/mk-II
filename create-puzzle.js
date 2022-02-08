@@ -65,7 +65,7 @@ function createPuzzle(){
     }
     axios.post('http://localhost:5777/puzzle'||`${baseURL}/puzzle`,body)
     .then((res)=>{
-
+        window.location.href = `${baseURL}/master`
     })
 
 
