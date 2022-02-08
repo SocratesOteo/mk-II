@@ -71,7 +71,7 @@ app.get('/masterjs',(req,res)=>{
     res.sendFile(path.join(__dirname,'../master.js'))
 })
 
-app.get('styles-master',(req,res)=>{
+app.get('/styles-master',(req,res)=>{
     res.sendFile(path.join(__dirname,'../master.css'))
 })
 
@@ -86,10 +86,16 @@ app.get('/styles-create-puzzle',(req,res)=>{
     res.sendFile(path.join(__dirname,'../make-puzzle.css'))
 })
 
+app.get('/create-puzzlejs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../create-puzzle.js'))
+})
+
+
 
 app.get('/seed', seed);
 app.post('/user',register);
 app.post('/login',login)
+//app.post('/puzzle',addPuzzle)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

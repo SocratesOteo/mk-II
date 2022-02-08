@@ -25,7 +25,18 @@ module.exports = {
             username VARCHAR,
             password VARCHAR,
             email VARCHAR
-        );`).then(()=>{
+        );
+        
+        create table puzzles(
+            puzzle_id SERIAL PRIMARY KEY,
+            question VARCHAR,
+            answer VARCHAR,
+            six_hours_value VARCHAR,
+            twelve_hours_value VARCHAR,
+            twenty_four_hours_value VARCHAR 
+        );
+        
+        `).then(()=>{
             console.log('db seeded')
             res.sendStatus(200)
         })
@@ -81,6 +92,17 @@ module.exports = {
             
         }
         )
+    },
+    addPuzzle: (req,res)=>{
+        const {questionBox,answerBox,sixHours,twelveHours,twentyFourHours} = req.body
+
+        sequelize.query(`
+        INSERT INTO puzzles(question,answer,six_hours_value,twelve_hours_value,twenty_four_hours_value)
+        VALUES('${questionBox}','${answerBox}','${sixHours}','${twelveHours}','${twentyFourHours}');
+        
+        `).then((dbRes)=>{
+            res.status(200).send(dbRes)
+        })
     }
 }
 
