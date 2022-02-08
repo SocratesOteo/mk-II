@@ -1,4 +1,4 @@
-const res = require("express/lib/response")
+
 
 const questionBox = document.querySelector('#question-box')
 const answerBox = document.querySelector('#answer-box')

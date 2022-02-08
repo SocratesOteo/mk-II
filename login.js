@@ -62,6 +62,7 @@ function handleRegisterSubmit(e){
 
 function handleLoginSubmit(e){
     e.preventDefault()
+    console.log(username.value)
     if (username.value == 'twentyfiveplus1' && password.value == 'twentyfiveplus1'){
         window.location.href = `${baseURL}/master`
 
@@ -77,7 +78,7 @@ function handleLoginSubmit(e){
             console.log(res)
             console.log(res.data)
             console.log(res.data[0])
-            console.log(res.data[0].username)
+            
             console.log ('it worked')
             
             if (res.data[0].username == username.value && res.data[0].password == password.value){
