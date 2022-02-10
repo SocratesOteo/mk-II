@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const {seed, register, login, addPuzzle, getPuzzle, clickPuzzle, getLeaderBoard} = require("./controller.js");
+const {seed, register, login, addPuzzle, getPuzzle, clickPuzzle, getLeaderBoard, getPzzle} = require("./controller.js");
 const req = require('express/lib/request')
 
 
@@ -112,6 +112,7 @@ app.get('/get-puzzles',getPuzzle)
 //app.get('/puzzle-click',clickPuzzle)
 app.get('/puzzle-on-req',clickPuzzle)
 app.get('/get-leaderboard',getLeaderBoard)
+app.get('/get-pzzle',getPzzle)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
