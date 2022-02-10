@@ -121,6 +121,15 @@ module.exports = {
             res.status(200).send(dbRes)
         })
 
+    },
+    getLeaderBoard: (req,res)=>{
+        sequelize.query(`
+        SELECT * FROM users
+        `).then((dbRes)=>{
+            res.status(200).send(dbRes)
+
+        })
+
     }
 }
 
