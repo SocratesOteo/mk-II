@@ -11,7 +11,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const {seed, register, login, addPuzzle, getPuzzle} = require("./controller.js");
+const {seed, register, login, addPuzzle, getPuzzle, clickPuzzle} = require("./controller.js");
+const req = require('express/lib/request')
 
 
 app.get('/',function(req,res) {
@@ -90,6 +91,17 @@ app.get('/create-puzzlejs',(req,res)=>{
     res.sendFile(path.join(__dirname,'../create-puzzle.js'))
 })
 
+app.get('/styles-puzzle-on',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../puzzle-on.css'))
+})
+
+app.get('/puzzle-onjs',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../puzzle-on.js'))
+})
+
+app.get('/puzzle-on',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../puzzle-on.html'))
+})
 
 
 app.get('/seed', seed);
@@ -97,6 +109,8 @@ app.post('/user',register);
 app.post('/login',login)
 app.post('/puzzle',addPuzzle)
 app.get('/get-puzzles',getPuzzle)
+//app.get('/puzzle-click',clickPuzzle)
+app.get('/puzzle-on-req',clickPuzzle)
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

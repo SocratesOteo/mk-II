@@ -52,3 +52,16 @@ button{
     outline-color: red;
 }
 
+#play-game-button{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-width: 5px;
+    color: white;
+    font-family: 'W95FA';
+    font-size: x-large;
+}
+
+
+
+

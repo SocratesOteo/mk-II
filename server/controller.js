@@ -113,6 +113,14 @@ module.exports = {
         `).then((dbRes)=>{
             res.status(200).send(dbRes)
         })
+    },
+    clickPuzzle: (req,res)=>{
+        sequelize.query(`
+        SELECT * FROM puzzles
+        `).then((dbRes)=>{
+            res.status(200).send(dbRes)
+        })
+
     }
 }
 

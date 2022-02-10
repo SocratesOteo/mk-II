@@ -8,21 +8,39 @@
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@92.9,650;100,600&family=Jockey+One&display=swap');
         </style>
           <link rel="preload" href="W95FARegular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/styles-puzzles">
-        <link rel="stylesheet" href="puzzles.css">
+          <link rel="stylesheet" href="/styles-puzzle-on">
+          <link rel="stylesheet" href="puzzle-on.css">
     <title>Document</title>
 </head>
 <body>
-    <h1 id="puzzles-title">Puzzles</h1>
-    <div id="back-button-div">
-
+    <Div>
         <button id="back-button">B A C K</button>
+
+    </Div>
+    <label for="question-div" id="question-label">Q U E S T I O N</label>
+    <div id="question-div">
+        <p id="question"></p>
+
     </div>
-    <div id="puzzles-background">
-        <button id="play-game-button">PLAY GAME</button>
+    <div id="answer-div">
+        <label for="answer-box" id="answer-label">A N S W E R</label>
+        <form id="answer-form">
+            <input type="text" id="answer-box">
+        </form>
+
     </div>
+
+    <div id="submit-div">
+        <button id="submit-button">S U B M I T</button>
+    </div>
+
+
+
+
+
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/puzzlesjs"></script>
-    <script src="puzzles.js"></script>
+    <script src="/puzzle-onjs"></script>
+    <script src="puzzle-on.js"></script>
 </body>
 </html>
