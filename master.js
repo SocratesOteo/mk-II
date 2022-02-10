@@ -11,6 +11,12 @@ function logOut(){
     window.location.replace(`${baseURL}/`)
 }
 
+function back(){
+    window.location.href(`${baseURL}/master`)
+}
+
+
+
 function getPuzzles(){
     axios.get( `http://localhost:5777/get-pzzle` || `${baseURL}/get-pzzle`)
     .then((req)=>{
